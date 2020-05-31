@@ -19,12 +19,12 @@ app.use(bodyParser.json());
 
 const mongodb = 'mongodb://Karthic:Karthick1@ds019033.mlab.com:19033/resume';
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("build")); 
-    app.get("*", (req, res) => {
-         res.sendFile(path.resolve(__dirname,  "build", "index.html"));
-    });
-}
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static("build")); 
+//     app.get("*", (req, res) => {
+//          res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+//     });
+// }
 
 let dbConnect = mongoose.connect(mongodb, { useNewUrlParser: true }, function (err, db) {
     if (!err) {
